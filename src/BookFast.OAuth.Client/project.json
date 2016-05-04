@@ -3,7 +3,7 @@
   "compilationOptions": {
     "emitEntryPoint": true
   },
-  "userSecretsId": "AD7578C9-428D-48A7-8AF9-410D5062A12C", 
+  "userSecretsId": "book-fast-oauth-client-AD7578C9-428D-48A7-8AF9-410D5062A12C", 
 
   "dependencies": {
     "Microsoft.AspNet.Diagnostics": "1.0.0-rc1-final",

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BookFast.OAuth.Client.Models.Booking>
+
+<h3>@ViewData["Title"]</h3>
+
+@if (Model.Any())
+{
+    <p>Here is the list of your pending booking requests:</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.FacilityName)</th>
+                <th>@Html.DisplayNameFor(m => m.AccommodationName)</th>
+                <th>@Html.DisplayNameFor(m => m.FromDate)</th>
+                <th>@Html.DisplayNameFor(m => m.ToDate)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var booking in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(m => booking.FacilityName)</td>
+                    <td>@Html.DisplayFor(m => booking.AccommodationName)</td>
+                    <td>@Html.DisplayFor(m => booking.FromDate)</td>
+                    <td>@Html.DisplayFor(m => booking.ToDate)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>It looks like you have no pending booking requests.</p>
+}

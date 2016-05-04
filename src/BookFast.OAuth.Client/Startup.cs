@@ -1,5 +1,6 @@
 ﻿using BookFast.OAuth.Client.Infrastructure;
 using BookFast.OAuth.Client.Infrastructure.OAuth;
+using BookFast.OAuth.Client.Proxy;
 using Microsoft.AspNet.Authentication.Cookies;
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Hosting;
@@ -33,6 +34,9 @@ namespace BookFast.OAuth.Client
         {
             services.Configure<AuthenticationOptions>(Configuration.GetSection("Authentication:AzureAd"));
             services.AddMvc();
+
+            services.Configure<BookFastApiOptions>(Configuration.GetSection("Api"));
+            services.AddScoped<BookFastApiProxy>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory, 
